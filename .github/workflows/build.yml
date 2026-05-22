@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
 
     steps:
       - name: Checkout
@@ -29,7 +29,6 @@ jobs:
       - name: Build APK
         working-directory: mobile
         run: |
-          buildozer init 2>/dev/null || true
           buildozer android debug 2>&1 | tee build.log
 
       - name: Upload APK artifact
