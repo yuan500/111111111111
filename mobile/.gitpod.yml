@@ -1,0 +1,17 @@
+# This is the build script for Gitpod workspace
+# Gitpod provides a free cloud Linux environment
+
+tasks:
+  - name: Build APK
+    init: |
+      sudo apt-get update -qq
+      sudo apt-get install -y -qq python3-pip openjdk-17-jdk git zip unzip \
+        autoconf libtool pkg-config zlib1g-dev libncurses5-dev \
+        libncursesw5-dev cmake libffi-dev libssl-dev libltdl-dev
+      pip3 install --quiet buildozer cython virtualenv
+    command: |
+      echo "============================================"
+      echo "  上传 main.py, buildozer.spec, icon.png, presplash.png"
+      echo "  然后运行: buildozer android debug"
+      echo "============================================"
+      bash
