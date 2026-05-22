@@ -1,5 +1,6 @@
 name: Build APK
 
+# Ubuntu 22.04 + Buildozer 打包
 on:
   push:
   workflow_dispatch:
